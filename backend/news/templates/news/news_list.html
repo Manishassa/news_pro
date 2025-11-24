@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All News</title>
+</head>
+<body>
+    <h1>📰 All News</h1>
+
+    {% if news %}
+        <ul>
+            {% for item in news %}
+                <li>
+                    <strong>{{ item.title }}</strong><br>
+                    {{ item.content }}<br>
+                    <small>Published on: {{ item.created_at }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No news articles available yet.</p>
+    {% endif %}
+</body>
+</html>
